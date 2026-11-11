@@ -48,7 +48,13 @@ async function main() {
   const result = await xmediPost("/weibo/hot/search", { page: 1 });
   if (result.code === 0) {
     const meta = result.meta ?? {};
-    console.log(`【微博热搜】成功 cost_fen=${meta.cost_fen} balance_fen=${meta.balance_fen}`);
+    const lineage = ["observation_id", "observed_at", "basis", "contract_rev", "origin"]
+      .filter((key) => meta[key] !== undefined && meta[key] !== null && meta[key] !== "")
+      .map((key) => `${key}=${meta[key]}`)
+      .join(" ");
+    console.log(
+      `【微博热搜】成功 cost_fen=${meta.cost_fen} balance_fen=${meta.balance_fen}${lineage ? " " + lineage : ""}`
+    );
     console.log(JSON.stringify(result.data, null, 2));
   } else {
     console.log(

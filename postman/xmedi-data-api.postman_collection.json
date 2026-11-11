@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "xmedi-data-api-v1",
     "name": "极媒数据 Xmedi Data API",
-    "description": "极媒数据开放 API：https://www.xmedi.cn/docs\n鉴权：请求头 X-XMEDI-Key，使用集合变量 {{api_key}}。\n按次计费，code=0 成功才扣费，失败不扣费。\n控制台创建 Key：https://www.xmedi.cn/console",
+    "description": "极媒数据开放 API：https://www.xmedi.cn/docs\n鉴权：请求头 X-XMEDI-Key，使用集合变量 {{api_key}}。\n按次计费，code=0 成功才扣费，失败不扣费。\n成功响应的 meta 含数据血缘（observation_id、observed_at、basis、contract_rev、origin），字段以 OpenAPI 的 Meta 为准；失败响应不含这些字段。\n控制台创建 Key：https://www.xmedi.cn/console",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [

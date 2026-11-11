@@ -61,7 +61,13 @@ def main() -> None:
     result = xmedi_post("/weibo/hot/search", {"page": 1})
     if result.get("code") == 0:
         meta = result.get("meta", {})
-        print(f"【微博热搜】成功 cost_fen={meta.get('cost_fen')} balance_fen={meta.get('balance_fen')}")
+        lineage = " ".join(
+            f"{key}={meta[key]}"
+            for key in ("observation_id", "observed_at", "basis", "contract_rev", "origin")
+            if meta.get(key) not in (None, "")
+        )
+        extra = f" {lineage}" if lineage else ""
+        print(f"【微博热搜】成功 cost_fen={meta.get('cost_fen')} balance_fen={meta.get('balance_fen')}{extra}")
         print(json.dumps(result["data"], ensure_ascii=False, indent=2))
     else:
         print(f"【微博热搜】失败 error_code={result.get('error_code')} "

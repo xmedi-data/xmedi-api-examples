@@ -51,24 +51,33 @@ php    examples/php/xmedi_quickstart.php     # PHP 8+（cURL）
 | Base URL | `https://www.xmedi.cn/api/v1` |
 | 鉴权 | 请求头 `X-XMEDI-Key: <你的 Key>`，同时兼容 `Authorization: Bearer <Key>` |
 | 数据接口 | 一律 `POST`，请求体为 JSON 对象 |
-| 计费 | 按次计费，只有 `code = 0`（调用成功）才扣费；参数错误、余额不足、限流、上游失败均不扣费 |
+| 计费 | 按次计费，只有 `code = 0`（调用成功）才扣费；参数错误、余额不足、限流、服务异常均不扣费 |
 | 余额查询 | `GET /api/v1/account/balance`，免费 |
 | 产品目录 | `GET /api/v1/catalog`，免费，返回全部在售接口、单价与限流 |
 
 ### 响应结构
 
-成功：
+成功。`meta` 除计费字段外带数据血缘：`observation_id` 是观测编号，同一次观测被复用时不变，用来去重；`observed_at` 是观测时间（UTC），只在 `basis` 为 `reused` 时停在第一次采集的时刻；`basis` 取 `collected`（本次实时获取）、`reused`（复用近期同参数结果）或 `held`（来自已存数据）；`contract_rev` 是字段契约版本；`origin` 固定为 `xmedi.cn`。
 
 ```json
 {
   "code": 0,
   "message": "ok",
   "data": {},
-  "meta": { "request_id": "req_xxx", "cost_fen": 15, "balance_fen": 985 }
+  "meta": {
+    "request_id": "req_xxx",
+    "cost_fen": 15,
+    "balance_fen": 985,
+    "observation_id": "01JCX7Q2M4T8K3N5P6R9S0V1WZ",
+    "observed_at": "2026-11-11T08:30:12.345Z",
+    "basis": "collected",
+    "contract_rev": 1,
+    "origin": "xmedi.cn"
+  }
 }
 ```
 
-失败（不扣费）：
+失败（不扣费）。`meta` 只有 `request_id`、`cost_fen`、`balance_fen`，不含血缘字段。服务侧失败的 `error_code` 为 `INTERNAL_ERROR`。余额查询 `GET /account/balance` 没有 `meta` 信封。
 
 ```json
 {

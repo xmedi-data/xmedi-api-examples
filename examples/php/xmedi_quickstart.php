@@ -63,8 +63,14 @@ if (($balance['code'] ?? -1) !== 0) {
 $result = xmedi_post('/weibo/hot/search', ['page' => 1], $apiKey);
 if (($result['code'] ?? -1) === 0) {
     $meta = $result['meta'] ?? [];
+    $lineage = '';
+    foreach (['observation_id', 'observed_at', 'basis', 'contract_rev', 'origin'] as $key) {
+        if (isset($meta[$key]) && $meta[$key] !== '') {
+            $lineage .= ' ' . $key . '=' . $meta[$key];
+        }
+    }
     echo "【微博热搜】成功 cost_fen=" . ($meta['cost_fen'] ?? 0)
-        . " balance_fen=" . ($meta['balance_fen'] ?? 0) . PHP_EOL;
+        . " balance_fen=" . ($meta['balance_fen'] ?? 0) . $lineage . PHP_EOL;
     echo json_encode($result['data'], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . PHP_EOL;
 } else {
     echo "【微博热搜】失败 error_code=" . ($result['error_code'] ?? '')
