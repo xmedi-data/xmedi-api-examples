@@ -39,7 +39,7 @@
       "name": "微信",
       "item": [
         {
-          "name": "POST /wechat/accounts/ghid/channels — 原始 id 绑定视频号",
+          "name": "POST /wechat/search/accounts — 微信搜一搜查公众号",
           "request": {
             "method": "POST",
             "header": [
@@ -49,17 +49,119 @@
               }
             ],
             "url": {
-              "raw": "{{base_url}}/wechat/accounts/ghid/channels",
+              "raw": "{{base_url}}/wechat/search/accounts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "search",
+                "accounts"
+              ]
+            },
+            "description": "微信搜一搜查公众号。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"人民日报\",\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/search/articles — 微信搜一搜查文章",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/search/articles",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "search",
+                "articles"
+              ]
+            },
+            "description": "微信搜一搜查文章。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"人民日报\",\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/search/mixed — 微信搜一搜综合搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/search/mixed",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "search",
+                "mixed"
+              ]
+            },
+            "description": "微信搜一搜综合搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"人民日报\",\n  \"mode\": 5,\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/accounts/channels — 绑定的视频号",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/accounts/channels",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
                 "wechat",
                 "accounts",
-                "ghid",
                 "channels"
               ]
             },
+            "description": "绑定的视频号。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"gh_id\": \"gh_363b924965e9\"\n}",
@@ -68,84 +170,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "原始 id 绑定视频号。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/accounts/ghid/posts — 原始 id 历史列表",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "X-XMEDI-Key",
-                "value": "{{api_key}}"
-              }
-            ],
-            "url": {
-              "raw": "{{base_url}}/wechat/accounts/ghid/posts",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "wechat",
-                "accounts",
-                "ghid",
-                "posts"
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"gh_id\": \"gh_363b924965e9\",\n  \"page\": 1\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "description": "原始 id 历史列表。单价 ¥0.15 / 次（成功才计费）"
-          },
-          "response": []
-        },
-        {
-          "name": "POST /wechat/accounts/ghid/posts/metrics — 原始 id 历史列表（含阅读数）",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "X-XMEDI-Key",
-                "value": "{{api_key}}"
-              }
-            ],
-            "url": {
-              "raw": "{{base_url}}/wechat/accounts/ghid/posts/metrics",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "wechat",
-                "accounts",
-                "ghid",
-                "posts",
-                "metrics"
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"gh_id\": \"gh_363b924965e9\",\n  \"page\": 1\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "description": "原始 id 历史列表（含阅读数）。单价 ¥3 / 次（成功才计费）"
-          },
-          "response": []
-        },
-        {
-          "name": "POST /wechat/accounts/posts/list — 历史发文列表",
+          "name": "POST /wechat/accounts/posts/list — 公众号历史发文列表",
           "request": {
             "method": "POST",
             "header": [
@@ -166,6 +196,7 @@
                 "list"
               ]
             },
+            "description": "公众号历史发文列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"account_id\": \"gh_363b924965e9\",\n  \"page\": 1\n}",
@@ -174,43 +205,7 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "历史发文列表。单价 ¥0.15 / 次（成功才计费）"
-          },
-          "response": []
-        },
-        {
-          "name": "POST /wechat/accounts/posts/metrics — 历史发文列表（含阅读数）",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "X-XMEDI-Key",
-                "value": "{{api_key}}"
-              }
-            ],
-            "url": {
-              "raw": "{{base_url}}/wechat/accounts/posts/metrics",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "wechat",
-                "accounts",
-                "posts",
-                "metrics"
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"account_id\": \"gh_363b924965e9\",\n  \"page\": 1\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "description": "历史发文列表（含阅读数）。单价 ¥3 / 次（成功才计费）"
+            }
           },
           "response": []
         },
@@ -236,6 +231,7 @@
                 "today"
               ]
             },
+            "description": "公众号当天发文。单价 ¥0.3 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"account_id\": \"gh_363b924965e9\"\n}",
@@ -244,49 +240,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "公众号当天发文。单价 ¥0.3 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/accounts/posts/today/metrics — 公众号当天发文（含阅读数）",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "X-XMEDI-Key",
-                "value": "{{api_key}}"
-              }
-            ],
-            "url": {
-              "raw": "{{base_url}}/wechat/accounts/posts/today/metrics",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "wechat",
-                "accounts",
-                "posts",
-                "today",
-                "metrics"
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"account_id\": \"gh_363b924965e9\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "description": "公众号当天发文（含阅读数）。单价 ¥4.5 / 次（成功才计费）"
-          },
-          "response": []
-        },
-        {
-          "name": "POST /wechat/accounts/profile — 头像账号类型简介",
+          "name": "POST /wechat/accounts/profile — 公众号基本资料查询",
           "request": {
             "method": "POST",
             "header": [
@@ -306,6 +265,7 @@
                 "profile"
               ]
             },
+            "description": "公众号基本资料查询。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"account_id\": \"gh_363b924965e9\"\n}",
@@ -314,47 +274,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "头像账号类型简介。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/articles/sub-comments — 文章二级评论",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "X-XMEDI-Key",
-                "value": "{{api_key}}"
-              }
-            ],
-            "url": {
-              "raw": "{{base_url}}/wechat/articles/sub-comments",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "wechat",
-                "articles",
-                "sub-comments"
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"comment_id\": \"4311481105950703697\",\n  \"page\": 1,\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "description": "文章二级评论。单价 ¥0.15 / 次（成功才计费）"
-          },
-          "response": []
-        },
-        {
-          "name": "POST /wechat/articles/comments — 文章一级评论",
+          "name": "POST /wechat/articles/comments — 公众号文章评论列表",
           "request": {
             "method": "POST",
             "header": [
@@ -374,6 +299,7 @@
                 "comments"
               ]
             },
+            "description": "公众号文章评论列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
@@ -382,13 +308,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "文章一级评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/articles/detail — 文章详情 Pro",
+          "name": "POST /wechat/articles/detail — 公众号文章详情",
           "request": {
             "method": "POST",
             "header": [
@@ -408,6 +333,7 @@
                 "detail"
               ]
             },
+            "description": "公众号文章详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
@@ -416,47 +342,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "文章详情 Pro。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/articles/detail-with-video — 详情含视频下载",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "X-XMEDI-Key",
-                "value": "{{api_key}}"
-              }
-            ],
-            "url": {
-              "raw": "{{base_url}}/wechat/articles/detail-with-video",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "wechat",
-                "articles",
-                "detail-with-video"
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "description": "详情含视频下载。单价 ¥0.15 / 次（成功才计费）"
-          },
-          "response": []
-        },
-        {
-          "name": "POST /wechat/articles/html — 正文 HTML",
+          "name": "POST /wechat/articles/html — 公众号文章正文HTML",
           "request": {
             "method": "POST",
             "header": [
@@ -476,6 +367,7 @@
                 "html"
               ]
             },
+            "description": "公众号文章正文HTML。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
@@ -484,13 +376,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "正文 HTML。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/articles/metrics — 阅读点赞在看",
+          "name": "POST /wechat/articles/metrics — 公众号文章阅读点赞在看",
           "request": {
             "method": "POST",
             "header": [
@@ -510,6 +401,7 @@
                 "metrics"
               ]
             },
+            "description": "公众号文章阅读点赞在看。单价 ¥0.75 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
@@ -518,13 +410,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "阅读点赞在看。单价 ¥0.75 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/articles/metrics/pro — 阅读点赞扩展Pro",
+          "name": "POST /wechat/articles/metrics/pro — 公众号文章互动数据",
           "request": {
             "method": "POST",
             "header": [
@@ -545,6 +436,7 @@
                 "pro"
               ]
             },
+            "description": "公众号文章互动数据。单价 ¥0.75 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
@@ -553,13 +445,46 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "阅读点赞扩展Pro。单价 ¥0.75 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/articles/summary — 阅读点赞标题 URL",
+          "name": "POST /wechat/articles/sub-comments — 公众号文章评论回复",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/articles/sub-comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "articles",
+                "sub-comments"
+              ]
+            },
+            "description": "公众号文章评论回复。试运行，暂不收费",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comment_id\": \"4311481105950703697\",\n  \"page\": 1,\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/articles/summary — 公众号文章基础信息",
           "request": {
             "method": "POST",
             "header": [
@@ -579,6 +504,7 @@
                 "summary"
               ]
             },
+            "description": "公众号文章基础信息。单价 ¥0.75 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
@@ -587,13 +513,116 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "阅读点赞标题 URL。单价 ¥0.75 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/channels/feeds/convert-id — export_id与object_id互转",
+          "name": "POST /wechat/articles/video-link — 文章视频链接",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/articles/video-link",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "articles",
+                "video-link"
+              ]
+            },
+            "description": "文章视频链接。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/feeds/comments — 视频号一级评论",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/feeds/comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "feeds",
+                "comments"
+              ]
+            },
+            "description": "视频号一级评论。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"feed_id\": \"14991460993520372260\",\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/feeds/list — 视频号作品列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/feeds/list",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "feeds",
+                "list"
+              ]
+            },
+            "description": "视频号作品列表。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel_id\": \"v2_060000231003b20faec8c6e4811dc1d4c602ee30b0771bbcf220c67926bb76ab7702ac335a53@finder\",\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/feeds/convert-id — 视频号作品ID转换",
           "request": {
             "method": "POST",
             "header": [
@@ -614,6 +643,7 @@
                 "convert-id"
               ]
             },
+            "description": "视频号作品ID转换。单价 ¥0.08 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"export_id\": \"14991460993520372260\"\n}",
@@ -622,13 +652,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "export_id与object_id互转。单价 ¥0.08 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/channels/feeds/short-url — 视频号短链接",
+          "name": "POST /wechat/channels/feeds/download — 可下载链接",
           "request": {
             "method": "POST",
             "header": [
@@ -638,7 +667,7 @@
               }
             ],
             "url": {
-              "raw": "{{base_url}}/wechat/channels/feeds/short-url",
+              "raw": "{{base_url}}/wechat/channels/feeds/download",
               "host": [
                 "{{base_url}}"
               ],
@@ -646,9 +675,10 @@
                 "wechat",
                 "channels",
                 "feeds",
-                "short-url"
+                "download"
               ]
             },
+            "description": "可下载链接。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"feed_id\": \"14991460993520372260\"\n}",
@@ -657,13 +687,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "视频号短链接。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /wechat/channels/feeds/resolve-url — 视频链接解析",
+          "name": "POST /wechat/channels/feeds/metrics — 视频号作品互动数据",
           "request": {
             "method": "POST",
             "header": [
@@ -673,7 +702,7 @@
               }
             ],
             "url": {
-              "raw": "{{base_url}}/wechat/channels/feeds/resolve-url",
+              "raw": "{{base_url}}/wechat/channels/feeds/metrics",
               "host": [
                 "{{base_url}}"
               ],
@@ -681,9 +710,115 @@
                 "wechat",
                 "channels",
                 "feeds",
-                "resolve-url"
+                "metrics"
               ]
             },
+            "description": "视频号作品互动数据。单价 ¥0.06 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"feed_id\": \"14991460993520372260\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/feeds/short-link — 视频短链",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/feeds/short-link",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "feeds",
+                "short-link"
+              ]
+            },
+            "description": "视频短链。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"feed_id\": \"14991460993520372260\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/feeds/title — 视频号作品标题查询",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/feeds/title",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "feeds",
+                "title"
+              ]
+            },
+            "description": "视频号作品标题查询。单价 ¥0.06 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"feed_id\": \"14991460993520372260\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/ids/resolve — 分享短链解析",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/ids/resolve",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "ids",
+                "resolve"
+              ]
+            },
+            "description": "分享短链解析。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
@@ -692,8 +827,110 @@
                   "language": "json"
                 }
               }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/live-replays — 视频号直播回放列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/live-replays",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "live-replays"
+              ]
             },
-            "description": "视频链接解析。单价 ¥0.15 / 次（成功才计费）"
+            "description": "视频号直播回放列表。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel_id\": \"v2_060000231003b20faec8c6e4811dc1d4c602ee30b0771bbcf220c67926bb76ab7702ac335a53@finder\",\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/resolve — 视频号账号解析",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/resolve",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "resolve"
+              ]
+            },
+            "description": "视频号账号解析。试运行，暂不收费",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"人民日报\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/feeds/sub-comments — 视频二级评论",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/feeds/sub-comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "feeds",
+                "sub-comments"
+              ]
+            },
+            "description": "视频二级评论。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comment_id\": \"5333611842905301\",\n  \"feed_id\": \"14991460993520372260\",\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
           },
           "response": []
         }
@@ -703,7 +940,41 @@
       "name": "抖音",
       "item": [
         {
-          "name": "POST /douyin/ids/resolve — 抖音-分享链接解析",
+          "name": "POST /douyin/hot/search — 热搜榜",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/hot/search",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "hot",
+                "search"
+              ]
+            },
+            "description": "热搜榜。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /douyin/ids/resolve — 分享链接解析",
           "request": {
             "method": "POST",
             "header": [
@@ -723,6 +994,7 @@
                 "resolve"
               ]
             },
+            "description": "分享链接解析。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"share_text\": \"https://www.douyin.com/video/7660359685404364067\"\n}",
@@ -731,13 +1003,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-分享链接解析。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /douyin/search/suggestions — 抖音-搜索衍生词",
+          "name": "POST /douyin/search/suggestions — 搜索衍生词",
           "request": {
             "method": "POST",
             "header": [
@@ -757,6 +1028,7 @@
                 "suggestions"
               ]
             },
+            "description": "搜索衍生词。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\"\n}",
@@ -765,13 +1037,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-搜索衍生词。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /douyin/search/users — 抖音-用户搜索",
+          "name": "POST /douyin/search/users — 用户搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -791,6 +1062,7 @@
                 "users"
               ]
             },
+            "description": "用户搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -799,13 +1071,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-用户搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /douyin/search/videos — 抖音-综合搜索",
+          "name": "POST /douyin/search/videos — 综合搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -825,6 +1096,7 @@
                 "videos"
               ]
             },
+            "description": "综合搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -833,13 +1105,80 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-综合搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /douyin/users/creator-metrics — 抖音-创作者指数",
+          "name": "POST /douyin/topics/detail — 话题详情",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/topics/detail",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "topics",
+                "detail"
+              ]
+            },
+            "description": "话题详情。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"topic_id\": \"1575791821492238\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /douyin/topics/videos — 话题下作品",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/topics/videos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "topics",
+                "videos"
+              ]
+            },
+            "description": "话题下作品。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"page\": 1,\n  \"topic_id\": \"1575791821492238\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /douyin/users/creator-metrics — 创作者指数",
           "request": {
             "method": "POST",
             "header": [
@@ -859,6 +1198,7 @@
                 "creator-metrics"
               ]
             },
+            "description": "创作者指数。单价 ¥0.45 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"sec_user_id\": \"MS4wLjABAAAA0H3reAkjBs2A1UvVL2boamiFD3xM_eYRw2Mt4YcY9_k03waszaQnaWBJb9CHtJ1V\"\n}",
@@ -867,13 +1207,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-创作者指数。单价 ¥0.45 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /douyin/users/posts — 抖音-用户作品列表",
+          "name": "POST /douyin/users/posts — 用户作品列表",
           "request": {
             "method": "POST",
             "header": [
@@ -893,6 +1232,7 @@
                 "posts"
               ]
             },
+            "description": "用户作品列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"sec_user_id\": \"MS4wLjABAAAA0H3reAkjBs2A1UvVL2boamiFD3xM_eYRw2Mt4YcY9_k03waszaQnaWBJb9CHtJ1V\"\n}",
@@ -901,13 +1241,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-用户作品列表。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /douyin/users/profile — 抖音-用户详情",
+          "name": "POST /douyin/users/profile — 用户详情",
           "request": {
             "method": "POST",
             "header": [
@@ -927,6 +1266,7 @@
                 "profile"
               ]
             },
+            "description": "用户详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"sec_user_id\": \"MS4wLjABAAAA0H3reAkjBs2A1UvVL2boamiFD3xM_eYRw2Mt4YcY9_k03waszaQnaWBJb9CHtJ1V\"\n}",
@@ -935,13 +1275,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-用户详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /douyin/videos/comments — 抖音-视频一级评论",
+          "name": "POST /douyin/videos/comments — 视频一级评论",
           "request": {
             "method": "POST",
             "header": [
@@ -961,6 +1300,7 @@
                 "comments"
               ]
             },
+            "description": "视频一级评论。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"aweme_id\": \"7660359685404364067\",\n  \"page\": 1\n}",
@@ -969,13 +1309,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-视频一级评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /douyin/videos/detail — 抖音-视频详情",
+          "name": "POST /douyin/videos/detail — 视频详情",
           "request": {
             "method": "POST",
             "header": [
@@ -995,6 +1334,7 @@
                 "detail"
               ]
             },
+            "description": "视频详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"aweme_id\": \"7660359685404364067\"\n}",
@@ -1003,13 +1343,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-视频详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /douyin/videos/download — 抖音-视频下载",
+          "name": "POST /douyin/videos/download — 视频下载",
           "request": {
             "method": "POST",
             "header": [
@@ -1029,6 +1368,7 @@
                 "download"
               ]
             },
+            "description": "视频下载。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"aweme_id\": \"7660359685404364067\"\n}",
@@ -1037,13 +1377,46 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-视频下载。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /douyin/videos/sub-comments — 抖音-视频二级评论",
+          "name": "POST /douyin/videos/metrics — 作品互动数",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/videos/metrics",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "videos",
+                "metrics"
+              ]
+            },
+            "description": "作品互动数。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aweme_id\": \"7660359685404364067\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /douyin/videos/sub-comments — 视频二级评论",
           "request": {
             "method": "POST",
             "header": [
@@ -1063,6 +1436,7 @@
                 "sub-comments"
               ]
             },
+            "description": "视频二级评论。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"aweme_id\": \"7660359685404364067\",\n  \"page\": 1\n}",
@@ -1071,8 +1445,7 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "抖音-视频二级评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         }
@@ -1082,7 +1455,7 @@
       "name": "小红书",
       "item": [
         {
-          "name": "POST /xhs/ids/resolve — 小红书-分享链接解析",
+          "name": "POST /xhs/ids/resolve — 分享链接解析",
           "request": {
             "method": "POST",
             "header": [
@@ -1102,6 +1475,7 @@
                 "resolve"
               ]
             },
+            "description": "分享链接解析。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"share_text\": \"https://www.xiaohongshu.com/explore/6a64fdfd000000000c003001\"\n}",
@@ -1110,13 +1484,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "小红书-分享链接解析。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /xhs/notes/comments — 小红书-笔记一级评论",
+          "name": "POST /xhs/notes/comments — 笔记一级评论",
           "request": {
             "method": "POST",
             "header": [
@@ -1136,6 +1509,7 @@
                 "comments"
               ]
             },
+            "description": "笔记一级评论。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"note_id\": \"6a64fdfd000000000c003001\",\n  \"page\": 1\n}",
@@ -1144,13 +1518,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "小红书-笔记一级评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /xhs/notes/detail — 小红书-笔记详情",
+          "name": "POST /xhs/notes/detail — 笔记详情",
           "request": {
             "method": "POST",
             "header": [
@@ -1170,6 +1543,7 @@
                 "detail"
               ]
             },
+            "description": "笔记详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"note_id\": \"6a64fdfd000000000c003001\"\n}",
@@ -1178,13 +1552,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "小红书-笔记详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /xhs/notes/search — 小红书-笔记搜索",
+          "name": "POST /xhs/notes/search — 笔记搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -1204,6 +1577,7 @@
                 "search"
               ]
             },
+            "description": "笔记搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -1212,13 +1586,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "小红书-笔记搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /xhs/notes/sub-comments — 小红书-笔记二级评论",
+          "name": "POST /xhs/notes/sub-comments — 笔记二级评论",
           "request": {
             "method": "POST",
             "header": [
@@ -1238,6 +1611,7 @@
                 "sub-comments"
               ]
             },
+            "description": "笔记二级评论。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"comment_id\": \"6a655a4a000000001403ad3d\",\n  \"note_id\": \"6a64fdfd000000000c003001\",\n  \"page\": 1\n}",
@@ -1246,13 +1620,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "小红书-笔记二级评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /xhs/search/users — 小红书-用户搜索",
+          "name": "POST /xhs/search/users — 用户搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -1272,6 +1645,7 @@
                 "users"
               ]
             },
+            "description": "用户搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -1280,13 +1654,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "小红书-用户搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /xhs/topics/list — 小红书-话题列表",
+          "name": "POST /xhs/topics/list — 话题列表",
           "request": {
             "method": "POST",
             "header": [
@@ -1306,6 +1679,7 @@
                 "list"
               ]
             },
+            "description": "话题列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"topic_id\": \"5bebb112812f960001a1c561\"\n}",
@@ -1314,13 +1688,46 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "小红书-话题列表。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /xhs/users/notes — 小红书-用户笔记列表",
+          "name": "POST /xhs/topics/notes — 话题下笔记",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/xhs/topics/notes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "xhs",
+                "topics",
+                "notes"
+              ]
+            },
+            "description": "话题下笔记。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"page\": 1,\n  \"topic_id\": \"5bebb112812f960001a1c561\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /xhs/users/notes — 用户笔记列表",
           "request": {
             "method": "POST",
             "header": [
@@ -1340,6 +1747,7 @@
                 "notes"
               ]
             },
+            "description": "用户笔记列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"user_id\": \"5afdc5c3e8ac2b3dc6b3d5e9\"\n}",
@@ -1348,13 +1756,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "小红书-用户笔记列表。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /xhs/users/profile — 小红书-用户详情",
+          "name": "POST /xhs/users/profile — 用户详情",
           "request": {
             "method": "POST",
             "header": [
@@ -1374,6 +1781,7 @@
                 "profile"
               ]
             },
+            "description": "用户详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"user_id\": \"5afdc5c3e8ac2b3dc6b3d5e9\"\n}",
@@ -1382,8 +1790,7 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "小红书-用户详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         }
@@ -1393,7 +1800,41 @@
       "name": "快手",
       "item": [
         {
-          "name": "POST /kuaishou/ids/resolve — 快手-分享链接解析",
+          "name": "POST /kuaishou/hot/board — 热榜",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/kuaishou/hot/board",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "kuaishou",
+                "hot",
+                "board"
+              ]
+            },
+            "description": "热榜。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /kuaishou/ids/resolve — 分享链接解析",
           "request": {
             "method": "POST",
             "header": [
@@ -1413,6 +1854,7 @@
                 "resolve"
               ]
             },
+            "description": "分享链接解析。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"share_text\": \"https://www.kuaishou.com/short-video/5237123545043874669\"\n}",
@@ -1421,13 +1863,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "快手-分享链接解析。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /kuaishou/search/users — 快手-用户搜索",
+          "name": "POST /kuaishou/search/users — 用户搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -1447,6 +1888,7 @@
                 "users"
               ]
             },
+            "description": "用户搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -1455,13 +1897,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "快手-用户搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /kuaishou/search/videos — 快手-视频搜索",
+          "name": "POST /kuaishou/search/videos — 视频搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -1481,6 +1922,7 @@
                 "videos"
               ]
             },
+            "description": "视频搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -1489,13 +1931,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "快手-视频搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /kuaishou/users/posts — 快手-用户作品列表",
+          "name": "POST /kuaishou/users/posts — 用户作品列表",
           "request": {
             "method": "POST",
             "header": [
@@ -1515,6 +1956,7 @@
                 "posts"
               ]
             },
+            "description": "用户作品列表。试运行，暂不收费",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"user_id\": \"134818524\"\n}",
@@ -1523,13 +1965,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "快手-用户作品列表。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /kuaishou/users/profile — 快手-用户详情",
+          "name": "POST /kuaishou/users/profile — 用户详情",
           "request": {
             "method": "POST",
             "header": [
@@ -1549,6 +1990,7 @@
                 "profile"
               ]
             },
+            "description": "用户详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"user_id\": \"134818524\"\n}",
@@ -1557,13 +1999,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "快手-用户详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /kuaishou/videos/comments — 快手-视频评论",
+          "name": "POST /kuaishou/videos/comments — 视频评论",
           "request": {
             "method": "POST",
             "header": [
@@ -1583,6 +2024,7 @@
                 "comments"
               ]
             },
+            "description": "视频评论。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"photo_id\": \"5237123545043874669\"\n}",
@@ -1591,13 +2033,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "快手-视频评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /kuaishou/videos/detail — 快手-视频详情",
+          "name": "POST /kuaishou/videos/detail — 视频详情",
           "request": {
             "method": "POST",
             "header": [
@@ -1617,6 +2058,7 @@
                 "detail"
               ]
             },
+            "description": "视频详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"photo_id\": \"5237123545043874669\"\n}",
@@ -1625,13 +2067,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "快手-视频详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /kuaishou/videos/short-link — 快手-视频短链接",
+          "name": "POST /kuaishou/videos/short-link — 视频短链接",
           "request": {
             "method": "POST",
             "header": [
@@ -1651,6 +2092,7 @@
                 "short-link"
               ]
             },
+            "description": "视频短链接。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"photo_id\": \"5237123545043874669\"\n}",
@@ -1659,8 +2101,41 @@
                   "language": "json"
                 }
               }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /kuaishou/videos/sub-comments — 视频二级评论",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/kuaishou/videos/sub-comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "kuaishou",
+                "videos",
+                "sub-comments"
+              ]
             },
-            "description": "快手-视频短链接。单价 ¥0.15 / 次（成功才计费）"
+            "description": "视频二级评论。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comment_id\": \"5333611842905301\",\n  \"page\": 1,\n  \"photo_id\": \"5237123545043874669\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
           },
           "response": []
         }
@@ -1670,7 +2145,7 @@
       "name": "微博",
       "item": [
         {
-          "name": "POST /weibo/hot/search — 微博-热搜榜",
+          "name": "POST /weibo/hot/search — 热搜榜",
           "request": {
             "method": "POST",
             "header": [
@@ -1690,6 +2165,7 @@
                 "search"
               ]
             },
+            "description": "热搜榜。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1\n}",
@@ -1698,13 +2174,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-热搜榜。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /weibo/posts/comments — 微博-微博一级评论",
+          "name": "POST /weibo/posts/comments — 微博一级评论",
           "request": {
             "method": "POST",
             "header": [
@@ -1724,6 +2199,7 @@
                 "comments"
               ]
             },
+            "description": "微博一级评论。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"mid\": \"5333611823761312\",\n  \"page\": 1\n}",
@@ -1732,13 +2208,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-微博一级评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /weibo/posts/detail — 微博-微博详情",
+          "name": "POST /weibo/posts/detail — 微博详情",
           "request": {
             "method": "POST",
             "header": [
@@ -1758,6 +2233,7 @@
                 "detail"
               ]
             },
+            "description": "微博详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"mid\": \"5333611823761312\"\n}",
@@ -1766,13 +2242,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-微博详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /weibo/posts/sub-comments — 微博-微博二级评论",
+          "name": "POST /weibo/posts/sub-comments — 微博二级评论",
           "request": {
             "method": "POST",
             "header": [
@@ -1792,6 +2267,7 @@
                 "sub-comments"
               ]
             },
+            "description": "微博二级评论。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"comment_id\": \"5333611842905301\",\n  \"mid\": \"5333611823761312\",\n  \"page\": 1\n}",
@@ -1800,13 +2276,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-微博二级评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /weibo/search/posts — 微博-微博搜索",
+          "name": "POST /weibo/search/posts — 微博搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -1826,6 +2301,7 @@
                 "posts"
               ]
             },
+            "description": "微博搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -1834,13 +2310,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-微博搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /weibo/search/users — 微博-用户搜索",
+          "name": "POST /weibo/search/users — 用户搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -1860,6 +2335,7 @@
                 "users"
               ]
             },
+            "description": "用户搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -1868,13 +2344,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-用户搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /weibo/topics/detail — 微博-话题详情",
+          "name": "POST /weibo/topics/detail — 话题详情",
           "request": {
             "method": "POST",
             "header": [
@@ -1894,6 +2369,7 @@
                 "detail"
               ]
             },
+            "description": "话题详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"topic\": \"春节\"\n}",
@@ -1902,13 +2378,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-话题详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /weibo/topics/stats — 微博-话题数据",
+          "name": "POST /weibo/topics/stats — 话题数据",
           "request": {
             "method": "POST",
             "header": [
@@ -1928,6 +2403,7 @@
                 "stats"
               ]
             },
+            "description": "话题数据。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"topic\": \"春节\"\n}",
@@ -1936,13 +2412,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-话题数据。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /weibo/users/posts — 微博-用户微博列表",
+          "name": "POST /weibo/users/posts — 用户微博列表",
           "request": {
             "method": "POST",
             "header": [
@@ -1962,6 +2437,7 @@
                 "posts"
               ]
             },
+            "description": "用户微博列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"uid\": \"2803301701\"\n}",
@@ -1970,13 +2446,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-用户微博列表。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /weibo/users/profile — 微博-用户详情",
+          "name": "POST /weibo/users/profile — 用户详情",
           "request": {
             "method": "POST",
             "header": [
@@ -1996,6 +2471,7 @@
                 "profile"
               ]
             },
+            "description": "用户详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"uid\": \"2803301701\"\n}",
@@ -2004,13 +2480,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-用户详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /weibo/users/videos — 微博-用户视频列表",
+          "name": "POST /weibo/users/videos — 用户视频列表",
           "request": {
             "method": "POST",
             "header": [
@@ -2030,6 +2505,7 @@
                 "videos"
               ]
             },
+            "description": "用户视频列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"uid\": \"2803301701\"\n}",
@@ -2038,8 +2514,7 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "微博-用户视频列表。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         }
@@ -2049,7 +2524,41 @@
       "name": "B站",
       "item": [
         {
-          "name": "POST /bilibili/popular/list — B站-热门视频",
+          "name": "POST /bilibili/hot/search — 热搜榜",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bilibili/hot/search",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bilibili",
+                "hot",
+                "search"
+              ]
+            },
+            "description": "热搜榜。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /bilibili/popular/list — 热门视频",
           "request": {
             "method": "POST",
             "header": [
@@ -2069,6 +2578,7 @@
                 "list"
               ]
             },
+            "description": "热门视频。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1\n}",
@@ -2077,13 +2587,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "B站-热门视频。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /bilibili/search/users — B站-用户搜索",
+          "name": "POST /bilibili/search/users — 用户搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -2103,6 +2612,7 @@
                 "users"
               ]
             },
+            "description": "用户搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -2111,13 +2621,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "B站-用户搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /bilibili/search/videos — B站-视频搜索",
+          "name": "POST /bilibili/search/videos — 视频搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -2137,6 +2646,7 @@
                 "videos"
               ]
             },
+            "description": "视频搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -2145,13 +2655,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "B站-视频搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /bilibili/users/posts — B站-用户投稿",
+          "name": "POST /bilibili/users/posts — 用户投稿",
           "request": {
             "method": "POST",
             "header": [
@@ -2171,6 +2680,7 @@
                 "posts"
               ]
             },
+            "description": "用户投稿。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"mid\": \"3493143515236360\",\n  \"page\": 1\n}",
@@ -2179,13 +2689,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "B站-用户投稿。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /bilibili/users/profile — B站-用户详情",
+          "name": "POST /bilibili/users/profile — 用户详情",
           "request": {
             "method": "POST",
             "header": [
@@ -2205,6 +2714,7 @@
                 "profile"
               ]
             },
+            "description": "用户详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"mid\": \"3493143515236360\",\n  \"page\": 1\n}",
@@ -2213,47 +2723,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "B站-用户详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /bilibili/users/videos — B站-用户视频",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "X-XMEDI-Key",
-                "value": "{{api_key}}"
-              }
-            ],
-            "url": {
-              "raw": "{{base_url}}/bilibili/users/videos",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "bilibili",
-                "users",
-                "videos"
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"mid\": \"3493143515236360\",\n  \"page\": 1\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "description": "B站-用户视频。单价 ¥0.15 / 次（成功才计费）"
-          },
-          "response": []
-        },
-        {
-          "name": "POST /bilibili/videos/comments — B站-视频评论",
+          "name": "POST /bilibili/videos/comments — 视频评论",
           "request": {
             "method": "POST",
             "header": [
@@ -2273,6 +2748,7 @@
                 "comments"
               ]
             },
+            "description": "视频评论。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"bvid\": \"BV1Pt5q6SEyc\",\n  \"page\": 1\n}",
@@ -2281,13 +2757,46 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "B站-视频评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /bilibili/videos/detail — B站-视频详情",
+          "name": "POST /bilibili/videos/danmaku — 视频弹幕",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bilibili/videos/danmaku",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bilibili",
+                "videos",
+                "danmaku"
+              ]
+            },
+            "description": "视频弹幕。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bvid\": \"BV1Pt5q6SEyc\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /bilibili/videos/detail — 视频详情",
           "request": {
             "method": "POST",
             "header": [
@@ -2307,6 +2816,7 @@
                 "detail"
               ]
             },
+            "description": "视频详情。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"bvid\": \"BV1Pt5q6SEyc\"\n}",
@@ -2315,13 +2825,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "B站-视频详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /bilibili/videos/download — B站-视频下载",
+          "name": "POST /bilibili/videos/download — 视频下载",
           "request": {
             "method": "POST",
             "header": [
@@ -2341,6 +2850,7 @@
                 "download"
               ]
             },
+            "description": "视频下载。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"bvid\": \"BV1Pt5q6SEyc\"\n}",
@@ -2349,8 +2859,75 @@
                   "language": "json"
                 }
               }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /bilibili/videos/sub-comments — 视频二级评论",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bilibili/videos/sub-comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bilibili",
+                "videos",
+                "sub-comments"
+              ]
             },
-            "description": "B站-视频下载。单价 ¥0.15 / 次（成功才计费）"
+            "description": "视频二级评论。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bvid\": \"BV1Pt5q6SEyc\",\n  \"comment_id\": \"5333611842905301\",\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /bilibili/videos/transcript — 视频字幕",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bilibili/videos/transcript",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bilibili",
+                "videos",
+                "transcript"
+              ]
+            },
+            "description": "视频字幕。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bvid\": \"BV1Pt5q6SEyc\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
           },
           "response": []
         }
@@ -2360,7 +2937,7 @@
       "name": "TikTok",
       "item": [
         {
-          "name": "POST /tiktok/search/users — TikTok-用户搜索",
+          "name": "POST /tiktok/search/users — TikTok 用户搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -2380,6 +2957,7 @@
                 "users"
               ]
             },
+            "description": "TikTok 用户搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -2388,13 +2966,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "TikTok-用户搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /tiktok/search/videos — TikTok-综合搜索",
+          "name": "POST /tiktok/search/videos — TikTok 视频搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -2414,6 +2991,7 @@
                 "videos"
               ]
             },
+            "description": "TikTok 视频搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -2422,13 +3000,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "TikTok-综合搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /tiktok/users/posts — TikTok-用户作品列表",
+          "name": "POST /tiktok/users/posts — TikTok 用户作品列表",
           "request": {
             "method": "POST",
             "header": [
@@ -2448,6 +3025,7 @@
                 "posts"
               ]
             },
+            "description": "TikTok 用户作品列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"sec_uid\": \"MS4wLjABAAAAkji7re9Iywv0dCvd3jfCaYoEreGwZKxgKVyjJjNa6CQwnNK8yTjhJX7aKfnhjpPf\"\n}",
@@ -2456,13 +3034,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "TikTok-用户作品列表。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /tiktok/users/profile — TikTok-用户详情",
+          "name": "POST /tiktok/users/profile — TikTok 用户资料查询",
           "request": {
             "method": "POST",
             "header": [
@@ -2482,6 +3059,7 @@
                 "profile"
               ]
             },
+            "description": "TikTok 用户资料查询。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"page\": 1,\n  \"sec_uid\": \"MS4wLjABAAAAkji7re9Iywv0dCvd3jfCaYoEreGwZKxgKVyjJjNa6CQwnNK8yTjhJX7aKfnhjpPf\"\n}",
@@ -2490,13 +3068,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "TikTok-用户详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /tiktok/videos/comments — TikTok-视频一级评论",
+          "name": "POST /tiktok/videos/comments — TikTok 视频评论列表",
           "request": {
             "method": "POST",
             "header": [
@@ -2516,6 +3093,7 @@
                 "comments"
               ]
             },
+            "description": "TikTok 视频评论列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"aweme_id\": \"7675153163728489749\",\n  \"page\": 1\n}",
@@ -2524,13 +3102,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "TikTok-视频一级评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /tiktok/videos/detail — TikTok-视频详情",
+          "name": "POST /tiktok/videos/detail — TikTok 视频详情查询",
           "request": {
             "method": "POST",
             "header": [
@@ -2550,6 +3127,7 @@
                 "detail"
               ]
             },
+            "description": "TikTok 视频详情查询。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"aweme_id\": \"7675153163728489749\"\n}",
@@ -2558,13 +3136,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "TikTok-视频详情。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /tiktok/videos/download — TikTok-视频下载",
+          "name": "POST /tiktok/videos/download — TikTok 视频下载地址",
           "request": {
             "method": "POST",
             "header": [
@@ -2584,6 +3161,7 @@
                 "download"
               ]
             },
+            "description": "TikTok 视频下载地址。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"aweme_id\": \"7675153163728489749\"\n}",
@@ -2592,13 +3170,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "TikTok-视频下载。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /tiktok/videos/sub-comments — TikTok-视频二级评论",
+          "name": "POST /tiktok/videos/sub-comments — TikTok 评论回复列表",
           "request": {
             "method": "POST",
             "header": [
@@ -2618,6 +3195,7 @@
                 "sub-comments"
               ]
             },
+            "description": "TikTok 评论回复列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"aweme_id\": \"7675153163728489749\",\n  \"page\": 1\n}",
@@ -2626,8 +3204,7 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "TikTok-视频二级评论。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         }
@@ -2637,7 +3214,41 @@
       "name": "YouTube",
       "item": [
         {
-          "name": "POST /youtube/channels/shorts — YouTube-频道 Shorts",
+          "name": "POST /youtube/channels/profile — 频道资料",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/youtube/channels/profile",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "youtube",
+                "channels",
+                "profile"
+              ]
+            },
+            "description": "频道资料。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel_id\": \"UCX6OQ3DkcsbYNE6H8uQQuVA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /youtube/channels/shorts — YouTube 频道短视频列表",
           "request": {
             "method": "POST",
             "header": [
@@ -2657,6 +3268,7 @@
                 "shorts"
               ]
             },
+            "description": "YouTube 频道短视频列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"channel_id\": \"UCX6OQ3DkcsbYNE6H8uQQuVA\",\n  \"page\": 1\n}",
@@ -2665,13 +3277,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "YouTube-频道 Shorts。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /youtube/channels/streams — YouTube-频道直播",
+          "name": "POST /youtube/channels/streams — YouTube 频道直播列表",
           "request": {
             "method": "POST",
             "header": [
@@ -2691,6 +3302,7 @@
                 "streams"
               ]
             },
+            "description": "YouTube 频道直播列表。试运行，暂不收费",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"channel_id\": \"UCX6OQ3DkcsbYNE6H8uQQuVA\",\n  \"page\": 1\n}",
@@ -2699,13 +3311,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "YouTube-频道直播。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /youtube/channels/videos — YouTube-频道视频",
+          "name": "POST /youtube/channels/videos — YouTube 频道视频列表",
           "request": {
             "method": "POST",
             "header": [
@@ -2725,6 +3336,7 @@
                 "videos"
               ]
             },
+            "description": "YouTube 频道视频列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"channel_id\": \"UCX6OQ3DkcsbYNE6H8uQQuVA\",\n  \"page\": 1\n}",
@@ -2733,13 +3345,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "YouTube-频道视频。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /youtube/search/channels — YouTube-频道搜索",
+          "name": "POST /youtube/search/channels — YouTube 频道搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -2759,6 +3370,7 @@
                 "channels"
               ]
             },
+            "description": "YouTube 频道搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -2767,13 +3379,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "YouTube-频道搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /youtube/search/videos — YouTube-视频搜索",
+          "name": "POST /youtube/search/videos — YouTube 视频搜索",
           "request": {
             "method": "POST",
             "header": [
@@ -2793,6 +3404,7 @@
                 "videos"
               ]
             },
+            "description": "YouTube 视频搜索。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"keyword\": \"中国日报\",\n  \"page\": 1\n}",
@@ -2801,13 +3413,80 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "YouTube-视频搜索。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /youtube/videos/download — YouTube-视频下载",
+          "name": "POST /youtube/videos/comments — 视频评论",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/youtube/videos/comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "youtube",
+                "videos",
+                "comments"
+              ]
+            },
+            "description": "视频评论。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"page\": 1,\n  \"url\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /youtube/videos/detail — 视频详情",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/youtube/videos/detail",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "youtube",
+                "videos",
+                "detail"
+              ]
+            },
+            "description": "视频详情。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /youtube/videos/download — YouTube 视频下载地址",
           "request": {
             "method": "POST",
             "header": [
@@ -2827,6 +3506,7 @@
                 "download"
               ]
             },
+            "description": "YouTube 视频下载地址。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\"\n}",
@@ -2835,13 +3515,12 @@
                   "language": "json"
                 }
               }
-            },
-            "description": "YouTube-视频下载。单价 ¥0.15 / 次（成功才计费）"
+            }
           },
           "response": []
         },
         {
-          "name": "POST /youtube/videos/transcript — YouTube-视频转录",
+          "name": "POST /youtube/videos/transcript — YouTube 视频字幕提取",
           "request": {
             "method": "POST",
             "header": [
@@ -2861,6 +3540,7 @@
                 "transcript"
               ]
             },
+            "description": "YouTube 视频字幕提取。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"url\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\"\n}",
@@ -2869,8 +3549,357 @@
                   "language": "json"
                 }
               }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Instagram",
+      "item": [
+        {
+          "name": "POST /instagram/posts/comments — 帖子评论",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/posts/comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "posts",
+                "comments"
+              ]
             },
-            "description": "YouTube-视频转录。单价 ¥0.15 / 次（成功才计费）"
+            "description": "帖子评论。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"https://www.instagram.com/p/Dfa5-jix5gw/\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/posts/detail — 帖子详情",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/posts/detail",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "posts",
+                "detail"
+              ]
+            },
+            "description": "帖子详情。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"https://www.instagram.com/p/Dfa5-jix5gw/\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/search/users — 用户搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/search/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "search",
+                "users"
+              ]
+            },
+            "description": "用户搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"NASA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/users/posts — 用户帖子",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/users/posts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "users",
+                "posts"
+              ]
+            },
+            "description": "用户帖子。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"natgeo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/users/profile — 用户资料",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/users/profile",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "users",
+                "profile"
+              ]
+            },
+            "description": "用户资料。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"natgeo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "X",
+      "item": [
+        {
+          "name": "POST /twitter/posts/comments — 帖子回复",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/twitter/posts/comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "twitter",
+                "posts",
+                "comments"
+              ]
+            },
+            "description": "帖子回复。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tweet_id\": \"2121280846183137564\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /twitter/posts/detail — 帖子详情",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/twitter/posts/detail",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "twitter",
+                "posts",
+                "detail"
+              ]
+            },
+            "description": "帖子详情。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tweet_id\": \"2121280846183137564\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /twitter/search/posts — 帖子搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/twitter/search/posts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "twitter",
+                "search",
+                "posts"
+              ]
+            },
+            "description": "帖子搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"NASA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /twitter/users/posts — 用户帖子",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/twitter/users/posts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "twitter",
+                "users",
+                "posts"
+              ]
+            },
+            "description": "用户帖子。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"screen_name\": \"NASA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /twitter/users/profile — 用户资料",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/twitter/users/profile",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "twitter",
+                "users",
+                "profile"
+              ]
+            },
+            "description": "用户资料。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"screen_name\": \"NASA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
           },
           "response": []
         }
