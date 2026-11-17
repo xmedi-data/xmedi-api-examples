@@ -141,6 +141,40 @@
           "response": []
         },
         {
+          "name": "POST /wechat/search/videos — 搜一搜视频号视频",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/search/videos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "search",
+                "videos"
+              ]
+            },
+            "description": "搜一搜视频号视频。单价 ¥0.3 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"人民日报\",\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
           "name": "POST /wechat/accounts/channels — 绑定的视频号",
           "request": {
             "method": "POST",
@@ -612,6 +646,41 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"channel_id\": \"v2_060000231003b20faec8c6e4811dc1d4c602ee30b0771bbcf220c67926bb76ab7702ac335a53@finder\",\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/feeds/search — 视频号号内搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/feeds/search",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "feeds",
+                "search"
+              ]
+            },
+            "description": "视频号号内搜索。单价 ¥0.3 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel_id\": \"v2_060000231003b20faec8c6e4811dc1d4c602ee30b0771bbcf220c67926bb76ab7702ac335a53@finder\",\n  \"keyword\": \"人民日报\",\n  \"page\": 1\n}",
               "options": {
                 "raw": {
                   "language": "json"
