@@ -1002,6 +1002,177 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "POST /wechat/articles/detail-pro — 文章详情（含阅读数）",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/articles/detail-pro",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "articles",
+                "detail-pro"
+              ]
+            },
+            "description": "文章详情（含阅读数）。单价 ¥0.6 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"http://mp.weixin.qq.com/s?__biz=MjM5MjAxNDM4MA==&mid=2667026902&idx=1&sn=625cd9b1604b0968a3dcb98380a931ff\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/collections — 视频号合集列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/collections",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "collections"
+              ]
+            },
+            "description": "视频号合集列表。单价 ¥0.3 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel_id\": \"v2_060000231003b20faec8c6e4811dc1d4c602ee30b0771bbcf220c67926bb76ab7702ac335a53@finder\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/collections/videos — 视频号合集作品",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/collections/videos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "collections",
+                "videos"
+              ]
+            },
+            "description": "视频号合集作品。单价 ¥0.3 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel_id\": \"v2_060000231003b20faec8c6e4811dc1d4c602ee30b0771bbcf220c67926bb76ab7702ac335a53@finder\",\n  \"topic_id\": \"14566193340220246217\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/principal — 视频号主体信息",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/principal",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "principal"
+              ]
+            },
+            "description": "视频号主体信息。单价 ¥0.3 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel_id\": \"v2_060000231003b20faec8c6e4811dc1d4c602ee30b0771bbcf220c67926bb76ab7702ac335a53@finder\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /wechat/channels/profile — 视频号账号资料",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wechat/channels/profile",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wechat",
+                "channels",
+                "profile"
+              ]
+            },
+            "description": "视频号账号资料。单价 ¥0.3 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel_id\": \"v2_060000231003b20faec8c6e4811dc1d4c602ee30b0771bbcf220c67926bb76ab7702ac335a53@finder\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -1517,6 +1688,244 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "POST /douyin/music/detail — 音乐详情",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/music/detail",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "music",
+                "detail"
+              ]
+            },
+            "description": "音乐详情。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"music_id\": \"7686062977656654634\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /douyin/search/music — 音乐搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/search/music",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "search",
+                "music"
+              ]
+            },
+            "description": "音乐搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /douyin/search/topics — 话题搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/search/topics",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "search",
+                "topics"
+              ]
+            },
+            "description": "话题搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /douyin/videos/danmaku — 视频弹幕",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/videos/danmaku",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "videos",
+                "danmaku"
+              ]
+            },
+            "description": "视频弹幕。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aweme_id\": \"7660359685404364067\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /douyin/videos/detail-pro — 视频详情（含播放数）",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/videos/detail-pro",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "videos",
+                "detail-pro"
+              ]
+            },
+            "description": "视频详情（含播放数）。单价 ¥0.3 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aweme_id\": \"7660359685404364067\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /douyin/videos/related — 相关作品",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/videos/related",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "videos",
+                "related"
+              ]
+            },
+            "description": "相关作品。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aweme_id\": \"7660359685404364067\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /douyin/videos/short-link — 短链接",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/douyin/videos/short-link",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "douyin",
+                "videos",
+                "short-link"
+              ]
+            },
+            "description": "短链接。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"https://www.douyin.com/video/{aweme_id}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -1854,6 +2263,40 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"user_id\": \"5afdc5c3e8ac2b3dc6b3d5e9\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /xhs/search/suggestions — 搜索建议",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/xhs/search/suggestions",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "xhs",
+                "search",
+                "suggestions"
+              ]
+            },
+            "description": "搜索建议。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2586,6 +3029,176 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "POST /weibo/hot/board — 热搜词",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/weibo/hot/board",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "weibo",
+                "hot",
+                "board"
+              ]
+            },
+            "description": "热搜词。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /weibo/search/suggestions — 搜索建议",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/weibo/search/suggestions",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "weibo",
+                "search",
+                "suggestions"
+              ]
+            },
+            "description": "搜索建议。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /weibo/search/videos — 视频搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/weibo/search/videos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "weibo",
+                "search",
+                "videos"
+              ]
+            },
+            "description": "视频搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\",\n  \"page\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /weibo/users/followers — 粉丝列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/weibo/users/followers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "weibo",
+                "users",
+                "followers"
+              ]
+            },
+            "description": "粉丝列表。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"page\": 1,\n  \"uid\": \"2803301701\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /weibo/users/following — 关注列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/weibo/users/following",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "weibo",
+                "users",
+                "following"
+              ]
+            },
+            "description": "关注列表。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"page\": 1,\n  \"uid\": \"2803301701\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -3276,6 +3889,312 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "POST /tiktok/hot/search — 热搜",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tiktok/hot/search",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tiktok",
+                "hot",
+                "search"
+              ]
+            },
+            "description": "热搜。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /tiktok/search/music — 音乐搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tiktok/search/music",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tiktok",
+                "search",
+                "music"
+              ]
+            },
+            "description": "音乐搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /tiktok/search/topics — 话题搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tiktok/search/topics",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tiktok",
+                "search",
+                "topics"
+              ]
+            },
+            "description": "话题搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /tiktok/topics/detail — 话题详情",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tiktok/topics/detail",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tiktok",
+                "topics",
+                "detail"
+              ]
+            },
+            "description": "话题详情。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"topic_id\": \"7551\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /tiktok/topics/videos — 话题作品",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tiktok/topics/videos",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tiktok",
+                "topics",
+                "videos"
+              ]
+            },
+            "description": "话题作品。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"page\": 1,\n  \"topic_id\": \"7551\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /tiktok/users/followers — 粉丝列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tiktok/users/followers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tiktok",
+                "users",
+                "followers"
+              ]
+            },
+            "description": "粉丝列表。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sec_uid\": \"MS4wLjABAAAASJKX71Io3UmbAsNHH5riu0DwEE-X5Nt1xDioAJFRhY5bwiVqbR80bMopxKgqr2EM\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /tiktok/users/following — 关注列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tiktok/users/following",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tiktok",
+                "users",
+                "following"
+              ]
+            },
+            "description": "关注列表。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sec_uid\": \"MS4wLjABAAAASJKX71Io3UmbAsNHH5riu0DwEE-X5Nt1xDioAJFRhY5bwiVqbR80bMopxKgqr2EM\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /tiktok/users/similar — 相似用户",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tiktok/users/similar",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tiktok",
+                "users",
+                "similar"
+              ]
+            },
+            "description": "相似用户。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sec_uid\": \"MS4wLjABAAAASJKX71Io3UmbAsNHH5riu0DwEE-X5Nt1xDioAJFRhY5bwiVqbR80bMopxKgqr2EM\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /tiktok/videos/metrics — 作品统计",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tiktok/videos/metrics",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tiktok",
+                "videos",
+                "metrics"
+              ]
+            },
+            "description": "作品统计。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aweme_id\": \"7675153163728489749\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -3621,6 +4540,176 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "POST /youtube/channels/posts — 频道社区帖",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/youtube/channels/posts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "youtube",
+                "channels",
+                "posts"
+              ]
+            },
+            "description": "频道社区帖。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel_id\": \"UCX6OQ3DkcsbYNE6H8uQQuVA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /youtube/search/shorts — Shorts搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/youtube/search/shorts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "youtube",
+                "search",
+                "shorts"
+              ]
+            },
+            "description": "Shorts搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /youtube/search/suggestions — 搜索建议",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/youtube/search/suggestions",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "youtube",
+                "search",
+                "suggestions"
+              ]
+            },
+            "description": "搜索建议。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /youtube/videos/related — 相关视频",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/youtube/videos/related",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "youtube",
+                "videos",
+                "related"
+              ]
+            },
+            "description": "相关视频。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"video_id\": \"dQw4w9WgXcQ\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /youtube/videos/sub-comments — 评论回复",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/youtube/videos/sub-comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "youtube",
+                "videos",
+                "sub-comments"
+              ]
+            },
+            "description": "评论回复。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cursor\": \"reply-cursor\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -3796,6 +4885,380 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "POST /instagram/posts/sub-comments — 评论回复",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/posts/sub-comments",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "posts",
+                "sub-comments"
+              ]
+            },
+            "description": "评论回复。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comment_id\": \"18212972956368282\",\n  \"url\": \"https://www.instagram.com/p/Dfa5-jix5gw/\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/search/locations — 地点搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/search/locations",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "search",
+                "locations"
+              ]
+            },
+            "description": "地点搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"paris\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/search/music — 音乐搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/search/music",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "search",
+                "music"
+              ]
+            },
+            "description": "音乐搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/search/posts — 帖子搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/search/posts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "search",
+                "posts"
+              ]
+            },
+            "description": "帖子搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/search/reels — Reels搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/search/reels",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "search",
+                "reels"
+              ]
+            },
+            "description": "Reels搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/topics/search — 话题搜索",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/topics/search",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "topics",
+                "search"
+              ]
+            },
+            "description": "话题搜索。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"keyword\": \"cat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/users/followers — 粉丝列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/users/followers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "users",
+                "followers"
+              ]
+            },
+            "description": "粉丝列表。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"natgeo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/users/following — 关注列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/users/following",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "users",
+                "following"
+              ]
+            },
+            "description": "关注列表。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"natgeo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/users/reels — Reels列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/users/reels",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "users",
+                "reels"
+              ]
+            },
+            "description": "Reels列表。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"natgeo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/users/similar — 相似用户",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/users/similar",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "users",
+                "similar"
+              ]
+            },
+            "description": "相似用户。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"natgeo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /instagram/users/tagged — 被标记帖子",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/instagram/users/tagged",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "instagram",
+                "users",
+                "tagged"
+              ]
+            },
+            "description": "被标记帖子。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"natgeo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -3960,6 +5423,108 @@
               ]
             },
             "description": "用户资料。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"screen_name\": \"NASA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /twitter/hot/search — 热搜",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/twitter/hot/search",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "twitter",
+                "hot",
+                "search"
+              ]
+            },
+            "description": "热搜。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /twitter/users/followers — 粉丝列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/twitter/users/followers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "twitter",
+                "users",
+                "followers"
+              ]
+            },
+            "description": "粉丝列表。单价 ¥0.15 / 次（成功才计费）",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"screen_name\": \"NASA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST /twitter/users/following — 关注列表",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-XMEDI-Key",
+                "value": "{{api_key}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/twitter/users/following",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "twitter",
+                "users",
+                "following"
+              ]
+            },
+            "description": "关注列表。单价 ¥0.15 / 次（成功才计费）",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"screen_name\": \"NASA\"\n}",
